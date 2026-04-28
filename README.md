@@ -1,2 +1,3 @@
 # pythonprojectself
 personal learning StudentsCMS
+该学生管理系统采用面向对象的编程思想，实现基础的增删改查，学生信息文件加载与保存
