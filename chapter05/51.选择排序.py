@@ -1,6 +1,7 @@
 """
 选择排序：两两比较（不换位置），仅选出小值  最小置前置
 时间复杂度：O（n^2）
+不稳定算法
 """
 def select_sort(my_list):
     n=len(my_list)
