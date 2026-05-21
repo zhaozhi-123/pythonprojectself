@@ -20,6 +20,9 @@
                 顺序存储：既要存储数据，又要存储劳点的关系。
                 链式存储：采用节点（item,lchild,rchild)的方式，形成链表来存储
 """
+from typing import Callable
+
+
 #定义Node类，表示二叉树的节点
 class Node(object):
     def __init__(self,item):
@@ -64,20 +67,41 @@ class BinaryTree:
                     queue.append(node.rchild)
 
 
-
+        #广度优先遍历：一层一层向外扩散
         def breadth_travel(self):
             #判断根节点是否为空。
             if self.root is None:
                 return
+            #创建队列，添加 根节点到队列中
+            queue = []
+            queue.append(self.root)
+            #循环打印内容，只要队列不为空，就一直遍历
+            while len( queue)!=0:
+                #获取队列中的第一个元素
+                node = queue.pop(0)
+                #打印元素
+                print(node.item,end=' ')
+                #判断该节点的左子树是否为空
+                if node.lchild is not None:
+                    #把左子树加入队列
+                    queue.append(node.lchild)
+                #判断该节点的右子树是否为空
+                if node.rchild is not None:
+                    queue.append(node.rchild)
 
+
+        #深度优先遍历：一条路走到黑
+            # 先序：根结点-》左子树-》右子树
         # 定义preorder函数，深度优先遍历之先序遍历
         def preorder(self):
             pass
 
+            #中序：左子树-》根结点-》右子树
         # 定义inorder函数，深度优先遍历之中序遍历
         def inorder(self):
              pass
 
+            #后序：左子树-》右子树-》根结点
         # 定义postorder函数，深度优先遍历之后序遍历
         def postorder(self):
             pass
@@ -97,12 +121,10 @@ class BinaryTree:
             print(bt.root)  # 根节点（的地址）
             print(bt.root.item)  # 根节点的元素域（A）
 
-        if __name__ == '__main__':
-            dm01_()
-
-            #创建二叉树对象
+        #测试：广度优先遍历
+        def method_BFS(self, breadth_travel: Callable[..., None]):
             bt = BinaryTree()
-            #添加元素
+            # 添加元素
             bt.add('A')
             bt.add('B')
             bt.add('C')
@@ -114,4 +136,13 @@ class BinaryTree:
             bt.add('I')
             bt.add('J')
 
-            #广度优先遍历
+            # 广度优先遍历
+            breadth_travel()
+
+
+        if __name__ == '__main__':
+            dm01_()
+
+            #创建二叉树对象
+            self.method_BFS(breadth_travel)
+
