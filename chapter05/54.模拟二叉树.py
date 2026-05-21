@@ -66,7 +66,9 @@ class BinaryTree:
 
 
         def breadth_travel(self):
-            pass
+            #判断根节点是否为空。
+            if self.root is None:
+                return
 
         # 定义preorder函数，深度优先遍历之先序遍历
         def preorder(self):
@@ -97,3 +99,19 @@ class BinaryTree:
 
         if __name__ == '__main__':
             dm01_()
+
+            #创建二叉树对象
+            bt = BinaryTree()
+            #添加元素
+            bt.add('A')
+            bt.add('B')
+            bt.add('C')
+            bt.add('D')
+            bt.add('E')
+            bt.add('F')
+            bt.add('G')
+            bt.add('H')
+            bt.add('I')
+            bt.add('J')
+
+            #广度优先遍历
