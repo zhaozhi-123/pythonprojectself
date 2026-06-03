@@ -7,7 +7,7 @@
 #
 #2.导入模块中的功能from...import   -->调用方式：功能名/别名
 # from random import randint
-# from random import randint as rint
+# from random import randint as print
 from random import *
 
 for i in range(100):
